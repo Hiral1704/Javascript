@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var days = 373;
+
+        var years = parseInt(days / 365);   
+        var weeks = parseInt((days % 365) / 7);
+        var days  = days - ((years * 365) + (weeks * 7));
+
+        document.write("year:- ", years , "<br>");
+        document.write("weeks:- ", weeks , "<br>");
+        document.write("days:- ", days , "<br>");
+    </script>
+</body>
+</html>
