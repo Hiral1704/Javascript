@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document</title>
+</head>
+
+<body>
+
+    <img id="slider" width="400" height="250">
+
+    <button onclick="previous()">Previous</button>
+    <button onclick="next()">Next</button>
+
+    <script>
+        var sliderObj = {
+            images: ["https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200",
+
+                "https://images.unsplash.com/photo-1493246507139-91e8fad9978e?w=1200",
+
+                "https://images.unsplash.com/photo-1516117172878-fd2c41f4a759?w=1200"],
+            index: 0
+        };
+
+        document.getElementById("slider").src =
+            sliderObj.images[0];
+
+        function next() {
+            sliderObj.index++;
+
+            if (sliderObj.index >= sliderObj.images.length) {
+                sliderObj.index = 0;
+            }
+
+            document.getElementById("slider").src =
+                sliderObj.images[sliderObj.index];
+        }
+
+        function previous() {
+            sliderObj.index--;
+
+            if (sliderObj.index < 0) {
+                sliderObj.index = sliderObj.images.length - 1;
+            }
+
+            document.getElementById("slider").src =
+                sliderObj.images[sliderObj.index];
+        }
+
+    </script>
+
+</body>
+
+</html>
